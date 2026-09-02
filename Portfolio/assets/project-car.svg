@@ -1,0 +1,117 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="car-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#052e16" />
+    </linearGradient>
+    <linearGradient id="neon-cyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <linearGradient id="neon-green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <filter id="car-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="500" rx="16" fill="url(#car-bg)" />
+
+  <!-- Circuit Grid Pattern -->
+  <g stroke="#1e293b" stroke-width="1" stroke-opacity="0.7">
+    <path d="M0 80 H800 M0 160 H800 M0 240 H800 M0 320 H800 M0 400 H800" />
+    <path d="M100 0 V500 M200 0 V500 M300 0 V500 M400 0 V500 M500 0 V500 M600 0 V500 M700 0 V500" />
+  </g>
+
+  <!-- Wireless Wave Rings (Bluetooth HC-05) -->
+  <g transform="translate(400, 110)" stroke="#06b6d4" fill="none" opacity="0.8">
+    <circle cx="0" cy="0" r="25" stroke-width="1.5" stroke-dasharray="4 2" />
+    <circle cx="0" cy="0" r="50" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.6" />
+    <circle cx="0" cy="0" r="75" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.3" />
+    <circle cx="0" cy="0" r="10" fill="#06b6d4" filter="url(#car-glow)" />
+    <!-- Bluetooth Icon -->
+    <path d="M-4 -6 L4 2 L-2 8 L-2 -8 L4 -2 L-4 6" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text x="400" y="45" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#38bdf8" text-anchor="middle" letter-spacing="2">HC-05 BLUETOOTH 2.4GHz TELEMETRY</text>
+
+  <!-- Robotic Car Chassis (Top-Down Blueprint) -->
+  <g transform="translate(230, 180)">
+    <!-- Acrylic / Aluminum Chassis Frame -->
+    <rect x="50" y="30" width="240" height="230" rx="20" fill="#0f172a" stroke="#0ea5e9" stroke-width="2" stroke-opacity="0.8" />
+    
+    <!-- Left Wheels (DC Motors) -->
+    <rect x="20" y="45" width="25" height="70" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1.5" />
+    <rect x="20" y="155" width="25" height="70" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1.5" />
+    <!-- Tread lines -->
+    <line x1="20" y1="65" x2="45" y2="65" stroke="#475569" stroke-width="1" />
+    <line x1="20" y1="85" x2="45" y2="85" stroke="#475569" stroke-width="1" />
+    <line x1="20" y1="175" x2="45" y2="175" stroke="#475569" stroke-width="1" />
+    <line x1="20" y1="195" x2="45" y2="195" stroke="#475569" stroke-width="1" />
+
+    <!-- Right Wheels (DC Motors) -->
+    <rect x="295" y="45" width="25" height="70" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1.5" />
+    <rect x="295" y="155" width="25" height="70" rx="6" fill="#1e293b" stroke="#64748b" stroke-width="1.5" />
+    <line x1="295" y1="65" x2="320" y2="65" stroke="#475569" stroke-width="1" />
+    <line x1="295" y1="85" x2="320" y2="85" stroke="#475569" stroke-width="1" />
+    <line x1="295" y1="175" x2="320" y2="175" stroke="#475569" stroke-width="1" />
+    <line x1="295" y1="195" x2="320" y2="195" stroke="#475569" stroke-width="1" />
+
+    <!-- Arduino Uno MCU (Blue PCB) -->
+    <rect x="75" y="55" width="105" height="135" rx="8" fill="#006699" stroke="#38bdf8" stroke-width="1" />
+    <text x="127" y="78" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">ARDUINO UNO</text>
+    <rect x="90" y="90" width="30" height="20" rx="2" fill="#1e293b" stroke="#94a3b8" stroke-width="0.5" />
+    <text x="105" y="104" font-family="monospace" font-size="8" fill="#94a3b8" text-anchor="middle">ATmega</text>
+    <!-- USB Port & Power -->
+    <rect x="70" y="62" width="12" height="18" fill="#94a3b8" />
+    <rect x="70" y="130" width="12" height="14" fill="#000000" />
+    <!-- Pin Headers -->
+    <rect x="80" y="175" width="95" height="8" rx="2" fill="#0f172a" />
+    <rect x="80" y="58" width="95" height="8" rx="2" fill="#0f172a" />
+
+    <!-- L298N Dual H-Bridge Motor Driver Module (Red PCB) -->
+    <rect x="195" y="55" width="85" height="110" rx="6" fill="#881337" stroke="#fb7185" stroke-width="1" />
+    <!-- Big Aluminum Heatsink -->
+    <rect x="210" y="70" width="55" height="35" rx="3" fill="#334155" stroke="#64748b" stroke-width="1" />
+    <line x1="220" y1="70" x2="220" y2="105" stroke="#0f172a" stroke-width="1" />
+    <line x1="230" y1="70" x2="230" y2="105" stroke="#0f172a" stroke-width="1" />
+    <line x1="240" y1="70" x2="240" y2="105" stroke="#0f172a" stroke-width="1" />
+    <line x1="250" y1="70" x2="250" y2="105" stroke="#0f172a" stroke-width="1" />
+    <text x="237" y="125" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#fecdd3" text-anchor="middle">L298N DUAL</text>
+    <!-- Screw Terminals -->
+    <circle cx="205" cy="150" r="4" fill="#047857" />
+    <circle cx="220" cy="150" r="4" fill="#047857" />
+    <circle cx="255" cy="150" r="4" fill="#047857" />
+    <circle cx="270" cy="150" r="4" fill="#047857" />
+
+    <!-- Wire Connections / Traces -->
+    <path d="M180 120 H195" stroke="#10b981" stroke-width="2" stroke-dasharray="3 2" />
+    <path d="M180 135 H195" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3 2" />
+    <path d="M280 80 H295" stroke="#3b82f6" stroke-width="2" />
+    <path d="M280 190 H295" stroke="#3b82f6" stroke-width="2" />
+    <path d="M195 190 H45" stroke="#ef4444" stroke-width="2" />
+
+    <!-- Battery Compartment Indicator -->
+    <rect x="95" y="200" width="150" height="45" rx="6" fill="#1e293b" stroke="#475569" stroke-width="1" />
+    <text x="170" y="227" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#94a3b8" text-anchor="middle">Dual 18650 Li-ion 7.4V</text>
+  </g>
+
+  <!-- Hardware Tech Tags -->
+  <g transform="translate(60, 435)">
+    <rect x="0" y="0" width="145" height="28" rx="14" fill="#0f172a" stroke="#0284c7" stroke-width="1" />
+    <text x="72" y="18" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#38bdf8" text-anchor="middle">Arduino C/C++ Engine</text>
+
+    <rect x="155" y="0" width="155" height="28" rx="14" fill="#0f172a" stroke="#059669" stroke-width="1" />
+    <text x="232" y="18" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">Wireless UART Commands</text>
+
+    <rect x="320" y="0" width="165" height="28" rx="14" fill="#0f172a" stroke="#9333ea" stroke-width="1" />
+    <text x="402" y="18" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle">PWM Motor Speed Control</text>
+
+    <rect x="495" y="0" width="185" height="28" rx="14" fill="#0f172a" stroke="#e11d48" stroke-width="1" />
+    <text x="587" y="18" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#fb7185" text-anchor="middle">Proteus Circuit Simulation</text>
+  </g>
+</svg>

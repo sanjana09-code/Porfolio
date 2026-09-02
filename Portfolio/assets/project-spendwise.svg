@@ -1,0 +1,102 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="sw-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="sw-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="sw-green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <linearGradient id="sw-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#d946ef" />
+    </linearGradient>
+    <filter id="sw-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="500" rx="16" fill="url(#sw-bg)" />
+  
+  <!-- Subtle Grid -->
+  <path d="M0 100 H800 M0 200 H800 M0 300 H800 M0 400 H800 M200 0 V500 M400 0 V500 M600 0 V500" stroke="#334155" stroke-opacity="0.2" stroke-width="1" />
+  
+  <!-- Ambient Glow -->
+  <circle cx="680" cy="120" r="140" fill="#6366f1" opacity="0.15" filter="url(#sw-glow)" />
+  <circle cx="120" cy="400" r="120" fill="#06b6d4" opacity="0.12" filter="url(#sw-glow)" />
+
+  <!-- App Window Container -->
+  <rect x="60" y="40" width="680" height="420" rx="14" fill="#0b0f19" stroke="#334155" stroke-opacity="0.6" stroke-width="1.5" />
+  
+  <!-- App Header Bar -->
+  <rect x="60" y="40" width="680" height="48" rx="14" fill="#131b2e" />
+  <circle cx="90" cy="64" r="6" fill="#ef4444" opacity="0.8" />
+  <circle cx="110" cy="64" r="6" fill="#f59e0b" opacity="0.8" />
+  <circle cx="130" cy="64" r="6" fill="#10b981" opacity="0.8" />
+  <text x="400" y="70" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#94a3b8" text-anchor="middle" letter-spacing="1">SPENDWISE • EXPENSE ANALYTICS</text>
+  
+  <!-- Stat Card 1 (Total Balance) -->
+  <rect x="90" y="115" width="280" height="120" rx="12" fill="#151d32" stroke="#4f46e5" stroke-opacity="0.3" stroke-width="1" />
+  <text x="115" y="145" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#94a3b8">Total Monthly Spent</text>
+  <text x="115" y="185" font-family="'Inter', sans-serif" font-size="28" font-weight="700" fill="#f8fafc">$1,248.50</text>
+  <rect x="115" y="202" width="70" height="20" rx="10" fill="#10b981" fill-opacity="0.15" />
+  <text x="150" y="216" font-family="'Inter', sans-serif" font-size="10" font-weight="600" fill="#34d399" text-anchor="middle">↓ 12% vs last mo</text>
+
+  <!-- Stat Card 2 (Budget Remaining) -->
+  <rect x="390" y="115" width="320" height="120" rx="12" fill="#151d32" stroke="#334155" stroke-opacity="0.6" stroke-width="1" />
+  <text x="415" y="145" font-family="'Inter', sans-serif" font-size="12" font-weight="500" fill="#94a3b8">Budget Tracking</text>
+  <text x="415" y="185" font-family="'Inter', sans-serif" font-size="26" font-weight="700" fill="#38bdf8">$751.50 <tspan font-size="14" fill="#64748b">/ $2,000</tspan></text>
+  <!-- Progress Bar -->
+  <rect x="415" y="205" width="270" height="8" rx="4" fill="#334155" />
+  <rect x="415" y="205" width="170" height="8" rx="4" fill="url(#sw-accent)" />
+
+  <!-- Spending Chart / Activity Area -->
+  <rect x="90" y="255" width="380" height="180" rx="12" fill="#151d32" stroke="#334155" stroke-opacity="0.5" stroke-width="1" />
+  <text x="115" y="285" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">Expense Breakdown</text>
+  
+  <!-- Mini Bar Chart -->
+  <g transform="translate(115, 310)">
+    <!-- Food -->
+    <rect x="0" y="30" width="34" height="60" rx="4" fill="#6366f1" />
+    <text x="17" y="105" font-family="'Inter', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Food</text>
+    <!-- Tech -->
+    <rect x="55" y="10" width="34" height="80" rx="4" fill="#06b6d4" />
+    <text x="72" y="105" font-family="'Inter', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Tech</text>
+    <!-- Study -->
+    <rect x="110" y="45" width="34" height="45" rx="4" fill="#8b5cf6" />
+    <text x="127" y="105" font-family="'Inter', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Study</text>
+    <!-- Travel -->
+    <rect x="165" y="55" width="34" height="35" rx="4" fill="#10b981" />
+    <text x="182" y="105" font-family="'Inter', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Travel</text>
+    <!-- Other -->
+    <rect x="220" y="65" width="34" height="25" rx="4" fill="#f59e0b" />
+    <text x="237" y="105" font-family="'Inter', sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Other</text>
+  </g>
+
+  <!-- Recent Entries List -->
+  <rect x="490" y="255" width="220" height="180" rx="12" fill="#151d32" stroke="#334155" stroke-opacity="0.5" stroke-width="1" />
+  <text x="510" y="285" font-family="'Inter', sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">Quick Categorizer</text>
+  
+  <rect x="510" y="305" width="180" height="32" rx="6" fill="#1e293b" />
+  <circle cx="525" cy="321" r="5" fill="#6366f1" />
+  <text x="538" y="325" font-family="'Inter', sans-serif" font-size="11" fill="#cbd5e1">AI Cloud Host</text>
+  <text x="675" y="325" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#ef4444" text-anchor="end">-$18.00</text>
+
+  <rect x="510" y="347" width="180" height="32" rx="6" fill="#1e293b" />
+  <circle cx="525" cy="363" r="5" fill="#06b6d4" />
+  <text x="538" y="367" font-family="'Inter', sans-serif" font-size="11" fill="#cbd5e1">Python Book</text>
+  <text x="675" y="367" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#ef4444" text-anchor="end">-$32.50</text>
+
+  <rect x="510" y="389" width="180" height="32" rx="6" fill="#1e293b" />
+  <circle cx="525" cy="405" r="5" fill="#10b981" />
+  <text x="538" y="409" font-family="'Inter', sans-serif" font-size="11" fill="#cbd5e1">Campus Cafe</text>
+  <text x="675" y="409" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#ef4444" text-anchor="end">-$6.40</text>
+</svg>
